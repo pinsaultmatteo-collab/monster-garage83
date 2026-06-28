@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://monster-garage83.vercel.app/</loc><priority>1.0</priority></url>
+  <url><loc>https://monster-garage83.vercel.app/vehicules.html</loc><priority>0.9</priority></url>
+  <url><loc>https://monster-garage83.vercel.app/vehicule-ferrari-roma.html</loc><priority>0.7</priority></url>
+  <url><loc>https://monster-garage83.vercel.app/vehicule-audi-rs-q8.html</loc><priority>0.7</priority></url>
+  <url><loc>https://monster-garage83.vercel.app/vehicule-aston-martin-v8-vantage.html</loc><priority>0.7</priority></url>
+  <url><loc>https://monster-garage83.vercel.app/vehicule-ducati-959-panigale.html</loc><priority>0.7</priority></url>
+  <url><loc>https://monster-garage83.vercel.app/blog.html</loc><priority>0.7</priority></url>
+  <url><loc>https://monster-garage83.vercel.app/a-propos.html</loc><priority>0.7</priority></url>
+  <url><loc>https://monster-garage83.vercel.app/contact.html</loc><priority>0.7</priority></url>
+</urlset>
