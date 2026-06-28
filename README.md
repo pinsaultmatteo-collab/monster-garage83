@@ -4,22 +4,18 @@ Site vitrine multi-pages pour Monster Garage 83 (marchand auto sport/luxe/superc
 Conçu & développé par PMC Marketing — https://www.agence-pmc-marketing.com/
 
 ## Pages
-- `index.html`      — Accueil
-- `vehicules.html`  — Nos véhicules (grille + filtres + fiche détaillée)
-- `a-propos.html`   — Le garage (à propos, engagements, stats)
-- `blog.html`       — Actualités (5 articles, lecture plein écran)
-- `contact.html`    — Contact (formulaire + coordonnées + plan)
-
-Site 100% statique, images intégrées dans les fichiers (aucune dépendance, aucun build).
+- index.html      — Accueil
+- vehicules.html  — Nos véhicules (stock réel : Ferrari Roma, Audi RS Q8, Aston V8 Vantage, Ducati 959 Panigale)
+- a-propos.html   — Le garage
+- blog.html       — Actualités (5 articles)
+- contact.html    — Contact
 
 ## Mettre à jour le site en ligne (depuis ce dossier)
-```bash
-git add .
-git commit -m "Ajout pages Le garage, Actualités et Contact"
-git push
-```
+    git add .
+    git commit -m "Stock reel + galeries vehicules"
+    git push
 Vercel redéploie automatiquement à chaque push.
 
-## À brancher en production (démo pour l'instant)
-- Formulaire de contact → email / Formspree / CRM
-- Stock véhicules → Supabase (table + back-office) quand le client signe
+## Note images véhicules
+Les photos des véhicules sont chargées depuis le CDN Leboncoin (annonces Monster Garage 83).
+Pour une robustesse totale en production, prévoir de les héberger en propre (ou via Supabase).
