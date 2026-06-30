@@ -63,12 +63,40 @@ h1,h2,h3{font-weight:900;line-height:.94;letter-spacing:-.02em}
   border-radius:50%;background:var(--gold);margin-right:8px;vertical-align:middle;box-shadow:0 0 8px var(--gold)}
 .nav__links a.nav__sell:hover{color:var(--gold-hi)}
 .nav__cta{display:inline-flex;align-items:center;gap:9px;font-family:"Space Mono",monospace;
-  font-size:12.5px;font-weight:700;letter-spacing:.06em;padding:11px 18px;border:1px solid var(--gold);
-  border-radius:2px;color:var(--gold);transition:background .35s var(--ease),color .35s var(--ease),box-shadow .35s}
-.nav__cta:hover{background:var(--gold);color:#000;box-shadow:0 0 30px -6px var(--gold)}
+  font-size:12.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:11px 20px;
+  border:1px solid transparent;border-radius:2px;color:#0a0a0b;background:var(--grad-gold);background-size:200% auto;
+  transition:background-position .35s var(--ease),box-shadow .35s,transform .35s var(--ease)}
+.nav__cta:hover{background-position:right center;box-shadow:0 12px 34px -10px var(--gold);transform:translateY(-2px)}
 .nav__cta svg{width:14px;height:14px}
-@media(max-width:1040px){.nav__links{display:none}}
-@media(max-width:480px){.nav__brand{font-size:13px;gap:8px}.nav__brand svg{width:22px;height:22px}}
+.nav__lock{display:inline-flex;align-items:center;gap:8px}
+.nav__actions{display:flex;align-items:center;gap:10px}
+.nav__burger{display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;
+  border:1px solid var(--line);border-radius:3px;background:rgba(236,231,221,.02)}
+.nav__burger span{display:block;width:20px;height:2px;background:var(--bone);margin:0 auto;border-radius:2px;
+  transition:transform .3s var(--ease),opacity .3s var(--ease)}
+.nav.open .nav__burger span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav.open .nav__burger span:nth-child(2){opacity:0}
+.nav.open .nav__burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:920px){
+  .nav__burger{display:flex}
+  .nav.open{background:rgba(10,10,11,.98)}
+  .nav__links{position:absolute;top:100%;left:0;right:0;display:flex;flex-direction:column;align-items:stretch;
+    gap:0;background:rgba(10,10,11,.98);border-bottom:1px solid var(--line);padding:8px var(--pad) 20px;
+    transform:translateY(-10px);opacity:0;pointer-events:none;
+    transition:opacity .3s var(--ease),transform .3s var(--ease)}
+  .nav.open .nav__links{transform:none;opacity:1;pointer-events:auto}
+  .nav__links a{font-size:15px;padding:15px 2px;border-bottom:1px solid rgba(236,231,221,.07);width:100%}
+  .nav__links a::after{display:none}
+}
+@media(max-width:600px){
+  .nav__brand{font-size:13px;gap:8px}
+  .nav__brand svg{width:24px;height:24px}
+  .nav__lock{flex-direction:column;align-items:flex-start;gap:0;line-height:1.06}
+  .nav__cta{padding:9px 12px;font-size:11px;letter-spacing:.04em;gap:7px}
+}
+@media(max-width:430px){
+  .nav__cta{padding:9px 13px;font-size:10.5px}
+}
 
 .btn{display:inline-flex;align-items:center;gap:11px;font-weight:700;font-size:14px;
   letter-spacing:.04em;padding:15px 26px;border-radius:2px;text-transform:uppercase;cursor:pointer;
@@ -183,7 +211,7 @@ h1,h2,h3{font-weight:900;line-height:.94;letter-spacing:-.02em}
       <path d="M50 6 L86 27 V73 L50 94 L14 73 V27 Z" fill="none" stroke="var(--gold)" stroke-width="4"/>
       <path d="M31 68 V37 L42 37 L50 52 L58 37 L69 37 V68 H61 V51 L52 65 H48 L39 51 V68 Z" fill="var(--bone)"/>
     </svg>
-    <span class="nav__name">Monster Garage</span><span class="b83">83</span>
+    <span class="nav__lock"><span class="nav__name">Monster Garage</span><span class="b83">83</span></span>
   </a>
   <nav class="nav__links" aria-label="Navigation principale">
     <a class="nav__sell" href="vehicules.html">Véhicules à vendre</a>
@@ -192,10 +220,13 @@ h1,h2,h3{font-weight:900;line-height:.94;letter-spacing:-.02em}
     <a class="is-active" href="blog.html">Actualités</a>
     <a href="contact.html">Contact</a>
   </nav>
-  <a class="nav__cta" href="tel:+33622720513">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
-    06 22 72 05 13
-  </a>
+  <div class="nav__actions">
+    <a class="nav__cta" href="tel:+33622720513">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+      <span class="nav__cta-num">Appeler</span>
+    </a>
+    <button class="nav__burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
 </header>
 
 <section class="phead"><div class="phead__in">
@@ -266,6 +297,11 @@ h1,h2,h3{font-weight:900;line-height:.94;letter-spacing:-.02em}
   function onScroll(){ if(nav) nav.classList.toggle("scrolled", window.scrollY>30); }
   window.addEventListener("scroll",onScroll,{passive:true}); onScroll();
   var y=document.getElementById("year"); if(y) y.textContent=new Date().getFullYear();
+  var burger=document.getElementById("burger");
+  if(nav&&burger){
+    burger.addEventListener("click",function(){var open=nav.classList.toggle("open");burger.setAttribute("aria-expanded",open?"true":"false");});
+    [].forEach.call(nav.querySelectorAll(".nav__links a"),function(a){a.addEventListener("click",function(){nav.classList.remove("open");burger.setAttribute("aria-expanded","false");});});
+  }
   var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var rev=[].slice.call(document.querySelectorAll(".reveal"));
   if(reduce||!("IntersectionObserver" in window)){ rev.forEach(function(e){e.classList.add("in");}); }
